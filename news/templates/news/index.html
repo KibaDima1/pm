@@ -24,10 +24,11 @@
             </form>
           </div>
         </div>
-      </nav>
+    </nav>
 
  <div class="container mt-3">
     <h1> {{ title }}</h1>
+     {% now "Y-m-d H:i:s" %}
     <div class="row"> 
         {% for item in news %}
             <div class="card mb-3">
@@ -35,7 +36,7 @@
                     Категория: {{ item.category }}
                 </h5>
                 <div class="card-body">
-                    <h5 class="card-title">{{ item.title }}</h5>
+                    <h5 class="card-title {% cycle 'text-danger' 'text-success' %}">{{ item.title }}</h5>
                     <p class="card-text">{{ item.content }}</p>
                     <a href="#" class="btn btn-primary">read more...</a>
                 </div>
